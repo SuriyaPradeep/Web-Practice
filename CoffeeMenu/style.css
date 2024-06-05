@@ -2,5 +2,85 @@ h1, p, h2{
     text-align: center;
 }
 body{
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    font-family: sans-serif;
+    padding: 20px;
+}
+/*Using class selectors
+# for ID selectors*/
+.menu{
+    width: 80%;
     background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 500px;
+}
+.flavor, .dessert{
+    text-align: left;
+    width: 75%;
+}
+.price{
+    text-align: right;
+    width: 25%;
+}
+.item p{
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+/*
+You can add a fallback value for the font-family by adding another font name separated by a comma. Fallbacks are used in instances where the initial is not found/available.
+*/
+h1, h2{
+    font-family: Impact,serif;
+}
+.established{
+    font-style: italic;
+}
+h1{
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+h2{
+    font-size: 30px;
+}
+hr{
+    height: 2px;
+    background-color: brown;
+    border-color: brown;
+}
+.bottom-line{
+    margin-top: 25px;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -25px;
+}
+/* FOOTER */
+footer{
+    font-size: 14px;
+}
+a{
+    color: black;
+}
+/*Change color of visited website*/
+a:visited{
+    color: gray;
+}
+/*Change color of website when hovers*/
+a:hover{
+    color: brown;
+}
+/*Change color of website when being clicked*/
+a:active{
+    color: white;
+}
+
+.address{
+    margin-bottom: 5px;
 }

@@ -1,0 +1,138 @@
+<!--
+<!DOCTYPE html> tells browsers that the document is an HTML5
+-->
+<!DOCTYPE html>
+<!--
+This code snippet defines the beginning of an HTML document and specifies the document language
+-->
+<html lang="en">
+<!--
+The head element is used to contain metadata about the document, such as its title, links to stylesheets, and scripts. Metadata is information about the page that isn't displayed directly on the page.
+
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatPhotoApp</title>
+</head>
+<!--
+All page content elements that should be rendered to the page go inside the body element. 
+-->
+<body>
+    <!--
+    Identifies the primary content of a web page, excluding navigational elements, headers, footers, and sidebars.
+    Improves accessibility by providing a clear structure for assistive technologies like screen readers.
+    Enhances SEO (Search Engine Optimization) by helping search engines understand the main focus of the page.
+    -->
+    <main>
+        <!--
+        The <section> tag in HTML is used to define a semantic section within a document. It represents a meaningful portion of the content, typically a chapter, header, footer, or any other distinct section.
+        Creates a logical grouping for related content, improving the document's structure and readability.
+        -->
+        <section>
+            <h1>CatPhotoApp</h1>
+            <h2>Cat Photos</h2>
+            <!--
+            The target attribute is primarily used with the <a> (anchor) element in HTML.It specifies  where to display the linked document when a user clicks on the hyperlink.
+
+            target="_blank": This is the most common option. It opens the link in a new tab (or window in older browsers).
+            target="_self": This explicitly forces the link to open in the current frame, even if a default target is set elsewhere in the document.
+            target="_parent": This opens the link in the parent frame of a frameset. (Framesets are less common in modern web design)
+            target="_top": This opens the link in the full body of the window, replacing the entire current page content.
+            target="framename": This opens the link in a specific named frame within the current document (requires frames).
+            -->
+            <p>See more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a> in our gallery.</p>
+            <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back">
+        </section>
+    
+        <section>
+            <h2>Cat Lists</h2>
+            <h3>Things cats love:</h3>
+            <ul>
+                <li>cat nip</li>
+                <li>laser pointers</li>
+                <li>lasagna</li>
+            </ul>
+            <!--
+            The <figure> tag in HTML5 is used to represent self-contained content that is visually distinct, like illustrations, diagrams, photos, or even code listings. 
+            It provides a semantic way to associate these elements with captions for better understanding.
+            -->
+            <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate">
+                <figcaption>Cats <em>love</em> lasagna.</figcaption>
+            </figure>
+            <h3>Top 3 things cats hate:</h3> 
+            <ol type="i">
+                <li>flea treatment</li>
+                <li>thunder</li>
+                <li>other cats</li>
+              </ol>
+              <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+                <figcaption>Cats <strong>hate</strong> other cats</figcaption>
+              </figure>
+        </section>
+        <section>
+            <h2>Cat Form</h2>
+            <!--
+            Functionality: When a user submits a form (clicks a submit button), the browser gathers the data entered in the form fields (text boxes, checkboxes, etc.) and sends it to the URL specified in the action attribute.
+            Value: The value of the action attribute should be a valid URL. It can be:
+            Absolute URL: Points to a web page on a different domain (e.g., action="https://www.example.com/process_form.php").
+            Relative URL: Points to a file within the same website (e.g., action="process_form.php").
+            -->
+            <form action="https://freecatphotoapp.com/submit-cat-photo">
+                <!--
+                Fieldset:
+                The <fieldset> element groups the related radio buttons together, creating a visually distinct section within the form.
+                It can improve the readability and organization of your form.
+                
+                Legend:
+                The <legend> element, placed as the first child within the <fieldset>, provides a caption or title for the group of radio buttons.
+                In this case, the legend "Is your cat an indoor or outdoor cat?" clearly explains the purpose of the radio button choices.
+                
+                Radio Buttons:
+                The radio buttons (<input type="radio">) allow users to select one option from two choices: "Indoor" or "Outdoor".
+                They are grouped together using the same name attribute (name="indoor-outdoor"). This ensures only one button within this group can be selected at a time.
+                Each radio button has a unique id attribute (id="indoor" and id="outdoor") for potential use with JavaScript or CSS.
+                The value attribute (value="indoor" and value="outdoor") assigned to each radio button specifies the data that will be submitted when the form is processed.(checked) checks a radio by deafult.    
+                -->
+                <fieldset>
+                    <legend>Is your cat an indoor or outdoor cat?</legend>
+                    <label><input checked id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+                    <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+                </fieldset>
+                <!--
+                Fieldset and Legend:
+                <fieldset>: This element groups the related checkboxes together, creating a visually distinct section within the form labeled "What's your cat's personality?".
+                <legend>: This element provides a caption or title for the group of checkboxes, making it clear to users what information is being collected.
+                
+                    Checkboxes:
+                Each <input type="checkbox"> element represents a personality trait: "Loving", "Lazy", and "Energetic".
+                Unlike radio buttons, users can select multiple checkboxes to indicate various personality aspects that apply to their cat.
+                They share the same name attribute (name="personality"). This groups them together so the submitted data will be associated with this name.
+                Each checkbox has a unique id attribute (id="loving", id="lazy", and id="lazy") for potential use with JavaScript or CSS for specific styling or interactions.
+                The value attribute (value="loving", value="lazy", and value="value") assigned to each checkbox specifies the data that will be submitted for each selected trait.
+                -->
+                <fieldset>
+                    <legend>What's your cat's personality?</legend>
+                    <input id="loving" type="checkbox" name="personality" value="loving"> <label for="loving">Loving</label>
+                    <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+                    <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic"> Energetic</label>
+                </fieldset>
+                <!--
+                <input>: This element represents a form control where a user can enter data.
+                type="text": This attribute specifies the type of input field. Here, "text" allows the user to enter free-form text, ideal for URLs.
+                name="catphotourl": This attribute assigns a name to the input field. When the form is submitted, the data entered here will be accessible using the key "catphotourl". This helps identify and process the cat photo URL specifically.
+                placeholder="cat photo URL": This attribute sets a placeholder text displayed within the input field. It acts as a hint or guide for the user, suggesting what kind of information they should enter. In this case, it prompts the user to enter a "cat photo URL".
+                required: This attribute ensures that the user enters a value in this field before submitting the form. It helps prevent empty submissions and incomplete data.
+                -->
+                <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <footer>
+            <p>No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a></p>
+        </footer>
+    </main>
+</body>
+</html>

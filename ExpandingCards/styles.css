@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+*{
+  box-sizing: border-box; /* to avoid width problems if padding */
+}
+  
+
+/*
+font-family: "Muli", sans-serif;:
+This sets the font family for the body text.
+"Muli" is the preferred font, but if unavailable, the browser will fall back to a sans-serif font.
+
+justify-content: center;:
+This property is only relevant if the display property is set to flex (which it is in this case).
+It aligns the content of the body horizontally along the center of the viewport.
+
+align-items: center;:
+Similar to justify-content, this property applies to flexbox layouts.
+It aligns the content of the body vertically along the center of the viewport.
+
+display: flex;:
+This property sets the body element to use a flexbox layout model.
+Flexbox provides more control over how child elements are positioned within the body.
+
+height: 100vh;:
+This sets the height of the body element to 100% of the viewport height (vh).
+This ensures the body stretches to fill the entire visible area of the browser window.
+
+overflow: hidden;:
+This property hides any content that overflows the body's boundaries.
+It's useful for situations where you want to control the exact content displayed within the viewport.
+
+margin: 0;:
+This removes any default margin that the browser might add to the body element.
+*/
+body{
+    font-family: "Muli",sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-color: black;
+}
+/*
+display: flex;:
+This sets the display style of the container element to use a flexbox layout model.
+Flexbox provides more control over how child elements are positioned within the container.
+
+width: 90vw;:
+This sets the width of the container element to 90% of the viewport width (vw).
+This allows the container to be responsive and adjust its width based on the size of the browser window.
+*/
+.container {
+    display:flex;
+    width: 80vw;
+}
+/*
+Background properties:
+background-size: auto 100%: This sets the background image of the panel to automatically adjust its size to fit the width of the panel while maintaining its aspect ratio. The height will be scaled as needed to fit within the panel.
+background-position: center: This positions the background image in the center of the panel.
+background-repeat: no-repeat: This ensures the background image is not repeated if it doesn't fully cover the panel.
+
+Panel dimensions and style:
+height: 80vh: This sets the height of the panel to 80% of the viewport height (vh).
+border-radius: 50px: This sets the corners of the panel to be rounded with a radius of 50 pixels, creating a circular curve.
+color: #fff: This sets the text color within the panel to white (#fff).
+
+Interaction and animation:
+cursor: pointer: This changes the cursor to a pointer hand icon when hovering over the panel, indicating it's clickable.
+flex: 0.5: This is likely assuming the panel is inside a flexbox container. This property sets the panel to flex and take up 50% of the available space within the container.
+
+Positioning and effects:
+position: relative: This sets the positioning context of the panel element. It allows other child elements to be positioned relatively within the panel's coordinate system.
+transition: flex 0.7s ease-in;: This sets a transition effect on the flex property of the panel. When the panel's size changes due to flexbox adjustments or other reasons, this animation will occur over 0.7 seconds with an "ease-in" timing function (gradually speeding up).
+-webkit-transition: all 700ms ease-in;: This is likely a vendor prefix for WebKit browsers (like Safari) to ensure the transition effect works properly across different browsers. It sets a similar transition effect but applies it to all properties of the panel, potentially for future animations you might add.
+*/
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+    -webkit-transition: all 300ms ease-in;
+}
+.panel.active{
+    flex: 10;
+}
+/*
+font-size: 24px;: This sets the font size of the <h3> elements to 24 pixels.
+
+position: absolute;: This removes the <h3> elements from the normal document flow and positions them relative to their closest ancestor element with a non-static position (which in this case is the panel itself).
+
+bottom: 20px;: This positions the bottom edge of the <h3> elements 20 pixels from the bottom edge of their containing panel.
+
+left: 20px;: This positions the left edge of the <h3> elements 20 pixels from the left edge of their containing panel.
+
+margin: 0;: This removes any default margin that the browser might add to the <h3> elements.
+
+opacity: 0;: This sets the initial opacity of the <h3> elements to 0, making them invisible by default.
+*/
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}  
+/*
+opacity: 1;: This sets the opacity of the matched <h3> elements to 1, making them fully visible. This overrides the initial opacity of 0 set in the previous style.
+
+transition: opacity 0.3s ease-in 0.4s;: This sets a transition effect on the opacity property of the <h3> elements. When the opacity changes from 0 to 1 (due to the panel becoming active), this animation will occur over 0.3 seconds with an "ease-in" timing function (gradually speeding up). However, there's a delay of 0.4 seconds before the animation even starts.
+*/
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.1s ease-in 0.2s;
+}
+/*
+@media (max-width: 480px): This is the media query itself. It applies the following styles only when the maximum width of the viewport (browser window) is less than or equal to 480 pixels. This indicates the styles are meant for small screens, likely smartphones.
+
+.container { width: 100vw; }: Inside the media query, this style applies to elements with the class ".container". It sets their width to 100% of the viewport width (vw). This ensures the container element takes up the entire width of the screen on small devices.
+
+.panel:nth-of-type(4), .panel:nth-of-type(5) { display: none; }: This targets the fourth and fifth elements with the class ".panel" (using the :nth-of-type pseudo-class selector). It sets their display property to "none", effectively hiding them on screens with a maximum width of 480px.
+*/
+@media (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+      display: none;
+    }
+}

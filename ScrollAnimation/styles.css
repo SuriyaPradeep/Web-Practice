@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* background-color: #323030;: Sets a dark gray background color for the entire page.
+font-family: "Roboto", sans-serif;: Applies the Roboto font to all text within the body. If Roboto is not available, it will fall back to a generic sans-serif font.
+display: flex;: Makes the body a flex container, allowing you to use flexbox properties for layout.
+flex-direction: column;: Arranges the flex items (children of the body) in a column, one below the other.
+align-items: center;: Centers the flex items horizontally within the body.
+justify-content: center;: Centers the flex items vertically within the body.
+margin: 0;: Removes the default margin around the body to avoid any unintended spacing.
+overflow-x: hidden;: Prevents horizontal scrolling, hiding any content that might overflow horizontally. */
+
+body {
+  background-color: #323030;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 10px;
+  color: #fff;
+}
+
+/* .box: This class styles a div element with the following properties:
+background-color: #9b7eb6;: Sets a light purple background color for the box.
+color: #fff;: Sets the text color inside the box to white.
+display: flex;: Makes the box a flex container.
+align-items: center;: Centers the content inside the box vertically.
+justify-content: center;: Centers the content inside the box horizontally.
+width: 350px;: Sets the width of the box to 350 pixels.
+height: 450px;: Sets the height of the box to 450 pixels.
+margin: 10px;: Adds a 10-pixel margin around the box.
+border-radius: 10px;: Rounds the corners of the box with a 10-pixel radius.
+transform: translateX(400%);: Moves the box 400% to the right of its original position on the x-axis, making it initially off-screen.
+transition: transform 0.4s ease;: Adds a smooth transition effect to the transform property, animating changes over 0.4 seconds with an easing function. */
+
+.box {
+  background-color: #9b7eb6;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 450px;
+  margin: 10px;
+  border-radius: 10px;
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+
+.box img {
+  width: 300px;
+  height: 400px;
+}
+
+/* Selector: .box:nth-of-type(even)
+This CSS rule targets elements with the class box that are in even positions among their siblings of the same type.
+:nth-of-type(even) selects every second element, starting from the second one. In a sequence of .box elements, it would select the 2nd, 4th, 6th, etc.
+
+Property: transform: translateX(-400%);
+The transform property is used to apply a transformation to the element.
+translateX(-400%) specifically moves the element horizontally along the x-axis.
+-400% moves the element to the left by 400% of its own width, which usually places it far off to the left side of its original position, typically out of the visible area. */
+
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+/* Selector: .box.show
+This CSS rule targets elements that have both the box class and the show class.
+It applies only to elements that meet both criteria (e.g., <div class="box show">).
+
+Property: transform: translateX(0);
+Again, the transform property is used to apply a transformation to the element.
+translateX(0) moves the element horizontally to the position 0 on the x-axis, effectively resetting any horizontal translation applied to it.
+This means the element will be moved back to its original position. */
+
+.box.show {
+  transform: translateX(0);
+}
+
+/* Positioning:
+position: absolute;: Positions the .info elements absolutely within their closest positioned ancestor. This means they are positioned relative to the first parent element with a position other than static.
+top: 87%;: Positions the top edge of the .info elements 87% down from the top edge of their containing block (in this case, their closest positioned ancestor).
+width: 100%;: Sets the width of the .info elements to 100% of their containing block's width.
+
+Alignment
+align-items: center;: Aligns the contents of the .info elements along the cross-axis (vertically) to the center.
+justify-content: center;: Aligns the contents of the .info elements along the main-axis (horizontally) to the center.
+These properties combined center the content both horizontally and vertically within the .info elements.
+
+Appearance:
+border-radius: 10px;: Rounds the corners of the .info elements with a border radius of 10 pixels.
+background-color: rgba(0, 0, 0, 0.5);: Sets the background color of the .info elements to a semi-transparent black color. The rgba function allows specifying an alpha value (opacity), with 0.5 making it 50% transparent.
+color: rgb(244, 236, 236);: Sets the text color inside the .info elements to a light gray.
+text-align: center;: Aligns the text content of the .info elements to the center horizontally. */
+
+
+.box .info {
+  position: absolute;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  top: 87%;
+  border-radius: 10px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Optional: Add a semi-transparent background */
+  color: rgb(244, 236, 236);
+  text-align: center;
+}
